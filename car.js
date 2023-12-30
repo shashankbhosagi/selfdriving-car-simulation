@@ -7,6 +7,8 @@ class Car {
 
     this.speed = 0;
     this.acceleration = 0.2;
+    this.maxSpeed = 4;
+    this.friciton = 0.05;
 
     this.controls = new Controls();
   }
@@ -18,13 +20,24 @@ class Car {
     if (this.controls.reverse) {
       this.speed -= this.acceleration;
     }
+    if (this.speed > this.maxSpeed) {
+      this.speed = this.maxSpeed;
+    }
+    //here -ve speed means car is going backwards :)
+    if (this.speed < -this.maxSpeed / 2) {
+      this.speed = -this.maxSpeed / 2;
+    }
+    if (this.speed > 0) {
+      this.speed -= this.friciton;
+    }
+    if (this.speed < 0) {
+      this.speed += this.friciton;
+    }
+    if (Math.abs(this.speed) < this.friciton) {
+      this.speed = 0;
+    }
+
     this.y -= this.speed;
-    // if (this.controls.left) {
-    //   this.x -= 2;
-    // }
-    // if (this.controls.right) {
-    //   this.x += 2;
-    // }
   }
 
   draw(ctx) {
