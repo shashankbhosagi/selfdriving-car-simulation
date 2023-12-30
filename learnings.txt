@@ -1,0 +1,3 @@
+
+1) WHen we include  canvas.height = window.innerHeight; outside animate it leavs behind the trail of previous animation also and when you try to resize the console the outer window fails to resize too so to solve this problem we include it inside the animate() function which will update the canvas height whenever animate is called :) and when canvas resizes it also clears the old trail of our car lol, ekk tir se do nishana XD.
+
