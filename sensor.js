@@ -46,7 +46,7 @@ class Sensor {
         roadBorders[i][1]
       );
       if (touch) {
-        this.touches.push(touch);
+        touches.push(touch);
       }
     }
 
@@ -73,7 +73,7 @@ class Sensor {
 
       ctx.beginPath();
       ctx.lineWidth = 2;
-      ctx.strokeStyle = "yellow";
+      ctx.strokeStyle = "black";
       ctx.moveTo(this.rays[i][1].x, this.rays[i][1].y);
       ctx.lineTo(end.x, end.y);
       ctx.stroke();
