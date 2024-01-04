@@ -1,6 +1,6 @@
 # Self Driving car in Vanilla JS
 
-It is completely written in vanilla javascript with no libraries used...
+It is completely written in vanilla javascript with no libraries used, self-driving features yet to be added but a basic setup is ready.
 
 Check it out [here](https://self-driving-car.shashankbhosagi.com/)
 
