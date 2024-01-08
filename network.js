@@ -10,7 +10,7 @@ class NeuralNetwork {
     let outputs = Level.feedForward(givenInputs, network.levels[0]);
     //Feeding the output of previous level to further levels
     for (let i = 1; i < network.levels.length; i++) {
-      outputs = Level.feedForward(givenInputs, network.levels[i]);
+      outputs = Level.feedForward(outputs, network.levels[i]);
     }
 
     return outputs; // this will tell us whether the car should go forwared backward left or right ;)
@@ -52,7 +52,7 @@ class Level {
     for (let i = 0; i < level.outputs.length; i++) {
       let sum = 0;
       for (let j = 0; j < level.inputs.length; j++) {
-        sum = level.inputs[j] * level.weights[j][i];
+        sum += level.inputs[j] * level.weights[j][i];
       }
 
       if (sum > level.biases[i]) {
