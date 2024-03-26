@@ -12,7 +12,7 @@ const road = new Road(carCanvas.width / 2, carCanvas.width * 0.9);
 // const car = new Car(road.getLaneCenter(1), 100, 30, 50, "KEYS");
 // const car = new Car(road.getLaneCenter(1), 100, 30, 50, "AI");
 
-const N = 300;
+let N = 400;
 const cars = generateCars(N);
 let bestCar = cars[0];
 
@@ -28,6 +28,7 @@ if (localStorage.getItem("bestBrain")) {
 const traffic = [
   new Car(road.getLaneCenter(1), -100, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(2), -300, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(1), -500, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(2), -650, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(0), -900, 30, 50, "DUMMY", 2),
@@ -37,9 +38,19 @@ const traffic = [
   new Car(road.getLaneCenter(1), -1200, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(1), -1400, 30, 50, "DUMMY", 2),
   new Car(road.getLaneCenter(2), -1300, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -1500, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(0), -1600, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -1700, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(2), -1800, 30, 50, "DUMMY", 2),
+  new Car(road.getLaneCenter(1), -1900, 30, 50, "DUMMY", 2),
 ];
 
 animate();
+
+const refreshButton = document.getElementById("refreshButton");
+refreshButton.addEventListener("click", function () {
+  location.reload();
+});
 
 function save() {
   localStorage.setItem("bestBrain", JSON.stringify(bestCar.brain));

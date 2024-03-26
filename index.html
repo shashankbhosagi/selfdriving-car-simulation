@@ -1,15 +1,59 @@
 <!DOCTYPE html>
+
 <head>
   <title>Self Driving Car</title>
   <link rel="stylesheet" href="./styles.css" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <canvas id="carCanvas"></canvas>
-  <div id="verticalButtons">
-    <button onclick="save()">📰</button>
-    <button onclick="discard()">🔥</button>
+  <div id="info">
+    <h1>Self Driving Car Simulation</h1>
+    <div>
+      The project is an educational tool for AI, neural networks, and autonomous vehicles. It lets users observe
+      self-driving cars in a simulated environment, exploring AI dynamics. It's interactive, fostering experimentation
+      with AI algorithms and simulations.
+    </div>
+
+    <h2>Instructions for usage</h2>
+    <ul>
+      <li><b>Restart Button: </b>Clicking this button will refresh the page, resetting the simulation to its initial
+        state.
+        This is useful if you want to start over or if the simulation needs to be reset for any reason.</li>
+      <li><b>Save Button:</b> Use the Save button to store the neural network configuration of the best-performing AI
+        model in
+        localStorage. This allows you to preserve the model's performance even after closing the page or refreshing it.
+      </li>
+      <li><b>Delete Button:</b> Clicking the Delete button removes the saved neural network configuration from
+        localStorage.
+        This is helpful if you want to clear the saved model's data or if you want to start fresh without any saved
+        configurations.</li>
+    </ul><br />
+    <div>By following these instructions and utilizing the provided buttons, users can interact with the car simulation
+      and control its behavior according to their preferences.</div>
+    <h2>Neural Network Visualization:</h2>
+    <div>The neural network visualization provides a graphical representation of the connections within the neural
+      network of the current best car. This visualization offers insight into how information flows through the network
+      and how different neurons are interconnected.</div>
+
+    <h3>For demo on how to use it 👆🏼<a href="#">Click here</a>👆🏼</h3>
   </div>
-  <canvas id="networkCanvas"></canvas>
+  <div id="canvasBody">
+
+    <canvas id="carCanvas"></canvas>
+    <div id="verticalButtons">
+      <button id="refreshButton">Restart 🔁</button>
+      <button onclick="save()">Save 📰</button>
+      <button onclick="discard()">Delete 🔥</button>
+    </div>
+    <canvas id="networkCanvas"></canvas>
+  </div>
+
+
   <script src="./network.js"></script>
   <script src="./visualizer.js"></script>
   <script src="./sensor.js"></script>
